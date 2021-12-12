@@ -34,15 +34,15 @@ preferences {
             options: ["DCS-5009L", "DCS-5010L", "DCS-5020L", "DCS-5029L", "DCS-5030L", "DCS-5211L", "DCS-5222L"], displayDuringSetup: true)
             }
         section("Camera Settings:"){
-        	input("CameraIP", "string", title:"Camera IP Address", description: "Please enter your camera's IP Address", required: true, displayDuringSetup: true)
-    		input("CameraPort", "string", title:"Camera Port", description: "Please enter your camera's HTTP Port", defaultValue: 80 , required: true, displayDuringSetup: true)
-    		input("VideoIP", "string", title:"Video IP Address", description: "Please enter your camera's IP Address (use external IP if you are using port forwarding)", required: true, displayDuringSetup: true)
-    		input("VideoPort", "string", title:"Video Port", description: "Please enter your camera's Video Port (use external Port if you are using port forwarding)", required: true, displayDuringSetup: true)
-    		input("CameraUser", "string", title:"Camera User", description: "Please enter your camera's username", required: false, displayDuringSetup: true)
+        	input("CameraIP", "text", title:"Camera IP Address", description: "Please enter your camera's IP Address", required: true, displayDuringSetup: true)
+    		input("CameraPort", "text", title:"Camera Port", description: "Please enter your camera's HTTP Port", defaultValue: 80 , required: true, displayDuringSetup: true)
+    		input("VideoIP", "text", title:"Video IP Address", description: "Please enter your camera's IP Address (use external IP if you are using port forwarding)", required: true, displayDuringSetup: true)
+    		input("VideoPort", "text", title:"Video Port", description: "Please enter your camera's Video Port (use external Port if you are using port forwarding)", required: true, displayDuringSetup: true)
+    		input("CameraUser", "text", title:"Camera User", description: "Please enter your camera's username", required: false, displayDuringSetup: true)
     		input("CameraPassword", "password", title:"Camera Password", description: "Please enter your camera's password", required: false, displayDuringSetup: true)
-            input("CameraPresetOne", "string", title:"Camera Preset 1", description: "Please enter which preset view you want to use (other than 'Home')", defaultValue: 1 , required: true, displayDuringSetup: true)
-			input("CameraPresetTwo", "string", title:"Camera Preset 2", description: "Please enter which preset view you want to use (other than 'Home')", defaultValue: 2 , required: false, displayDuringSetup: true)
-    		input("CameraPresetThree", "string", title:"Camera Preset 3", description: "Please enter which preset view you want to use (other than 'Home')", defaultValue: 3 , required: false, displayDuringSetup: true)
+            input("CameraPresetOne", "text", title:"Camera Preset 1", description: "Please enter which preset view you want to use (other than 'Home')", defaultValue: 1 , required: true, displayDuringSetup: true)
+			input("CameraPresetTwo", "text", title:"Camera Preset 2", description: "Please enter which preset view you want to use (other than 'Home')", defaultValue: 2 , required: false, displayDuringSetup: true)
+    		input("CameraPresetThree", "text", title:"Camera Preset 3", description: "Please enter which preset view you want to use (other than 'Home')", defaultValue: 3 , required: false, displayDuringSetup: true)
             }
         section("Hub Settings"){
         	input("hubName", "hub", title:"Hub", description: "Please select your Hub", required: true, displayDuringSetup: true)

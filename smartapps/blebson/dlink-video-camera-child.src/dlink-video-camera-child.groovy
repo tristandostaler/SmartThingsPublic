@@ -35,11 +35,11 @@ preferences {
             options: ["DCS-930L", "DCS-931L", "DCS-932L", "DCS-933L", "DCS-934L", "DCS-935L", "DCS-942L", "DCS-960L", "DCS-2132L", "DCS-2210L", "DCS-2310L", "DCS-2330L", "DCS-2630L"], displayDuringSetup: true)
         }
         section("Camera Settings:"){
-            input("CameraIP", "string", title:"Camera IP Address", description: "Please enter your camera's IP Address", required: true, displayDuringSetup: true)
-            input("CameraPort", "string", title:"Camera Port", description: "Please enter your camera's HTTP Port", defaultValue: 80 , required: true, displayDuringSetup: true)
-            input("VideoIP", "string", title:"Video IP Address", description: "Please enter your camera's IP Address (use external IP if you are using port forwarding)", required: true, displayDuringSetup: true)
-            input("VideoPort", "string", title:"Video Port", description: "Please enter your camera's Video Port (use external Port if you are using port forwarding)", required: true, displayDuringSetup: true)
-            input("CameraUser", "string", title:"Camera User", description: "Please enter your camera's username", required: false, displayDuringSetup: true)
+            input("CameraIP", "text", title:"Camera IP Address", description: "Please enter your camera's IP Address", required: true, displayDuringSetup: true)
+            input("CameraPort", "text", title:"Camera Port", description: "Please enter your camera's HTTP Port", defaultValue: 80 , required: true, displayDuringSetup: true)
+            input("VideoIP", "text", title:"Video IP Address", description: "Please enter your camera's IP Address (use external IP if you are using port forwarding)", required: true, displayDuringSetup: true)
+            input("VideoPort", "text", title:"Video Port", description: "Please enter your camera's Video Port (use external Port if you are using port forwarding)", required: true, displayDuringSetup: true)
+            input("CameraUser", "text", title:"Camera User", description: "Please enter your camera's username", required: false, displayDuringSetup: true)
             input("CameraPassword", "password", title:"Camera Password", description: "Please enter your camera's password", required: false, displayDuringSetup: true)
         }
         section("Hub Settings"){
@@ -70,14 +70,14 @@ def initialize() {
         state.CameraUser = CameraUser
         state.CameraPassword = CameraPassword
         
-        /*
+        
         log.debug "Camera IP: ${state.CameraIP}"
         log.debug "Camera Port: ${state.CameraPort}"
         log.debug "Video IP: ${state.VideoIP}"
         log.debug "Video Port: ${state.VideoPort}"
         log.debug "Camera User: ${state.CameraUser}"
         log.debug "Camera Password: ${state.CameraPassword}"
-        */
+        
         
 	try {
         def DNI = (Math.abs(new Random().nextInt()) % 99999 + 1).toString()
